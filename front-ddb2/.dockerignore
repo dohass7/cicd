@@ -1,0 +1,50 @@
+# Ignorer les dépendances locales
+node_modules
+npm-debug.log
+yarn-error.log
+pnpm-debug.log
+
+# Build output local (seul /dist du builder sera copié)
+#dist
+build
+coverage
+
+# Fichiers système
+.DS_Store
+Thumbs.db
+
+# Fichiers de configuration locaux
+.env
+.env.local
+.env.development
+.env.test
+.env.production
+
+# Git et CI
+.git
+.gitignore
+.gitattributes
+.github
+.gitlab-ci.yml
+
+# Éditeurs / IDE
+.vscode
+.idea
+*.swp
+
+# Docker interne
+Dockerfile
+.dockerignore
+
+# Tests
+__tests__/
+tests/
+*.spec.js
+*.test.js
+
+# OS et caches
+*.log
+.cache
+.tmp
+*.bak
+*.swp
