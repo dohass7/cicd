@@ -1,4 +1,4 @@
-name: CI/CD Pipeline
+name: My CI/CD Pipeline
 
 on:
   push:
@@ -12,7 +12,7 @@ on:
 
 env:
   PROJECT_LOCATION: /opt/applications/ams-imc
-  PROJECT_GROUP: dohdidi7-group
+  PROJECT_GROUP: dohass7
   PROJECT_NETWORK: imc-network
   PROJECT_NAME: front-ddb
   PROJECT_VERSION: latest
