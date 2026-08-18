@@ -146,6 +146,6 @@ jobs:
       - name: Deploy to server
         run: |
           ssh -o StrictHostKeyChecking=no -i ~/.ssh/id_rsa -p ${{ secrets.PROD_SERVER_SSH_PORT }} ${{ secrets.PROD_SERVER_USERNAME }}@${{ secrets.PROD_SERVER_ADDRESS }} "mkdir -p ${{ env.PROJECT_LOCATION }}/${{ env.PROJECT_NAME }}"
-          scp -o StrictHostKeyChecking=no -i ~/.ssh/id_rsa -P ${{ secrets.PROD_SERVER_SSH_PORT }} compose.yml ${{ secrets.PROD_SERVER_USERNAME }}@${{ secrets.PROD_SERVER_ADDRESS }}:${{ env.PROJECT_LOCATION }}/${{ env.PROJECT_NAME }}/compose.yml
+          scp -o StrictHostKeyChecking=no -i ~/.ssh/id_rsa -P ${{ secrets.PROD_SERVER_SSH_PORT }} front-ddb/compose.yml ${{ secrets.PROD_SERVER_USERNAME }}@${{ secrets.PROD_SERVER_ADDRESS }}:${{ env.PROJECT_LOCATION }}/${{ env.PROJECT_NAME }}/compose.yml
           ssh -o StrictHostKeyChecking=no -i ~/.ssh/id_rsa -p ${{ secrets.PROD_SERVER_SSH_PORT }} ${{ secrets.PROD_SERVER_USERNAME }}@${{ secrets.PROD_SERVER_ADDRESS }} "docker network inspect ${{ env.PROJECT_NETWORK }} > /dev/null 2>&1 || docker network create ${{ env.PROJECT_NETWORK }}"
           ssh -o StrictHostKeyChecking=no -i ~/.ssh/id_rsa -p ${{ secrets.PROD_SERVER_SSH_PORT }} ${{ secrets.PROD_SERVER_USERNAME }}@${{ secrets.PROD_SERVER_ADDRESS }} "docker compose -f ${{ env.PROJECT_LOCATION }}/${{ env.PROJECT_NAME }}/compose.yml down && docker compose -f ${{ env.PROJECT_LOCATION }}/${{ env.PROJECT_NAME }}/compose.yml up -d"
