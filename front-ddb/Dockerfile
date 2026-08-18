@@ -9,5 +9,7 @@
 ###
 #COPY --from=builder dist /usr/share/nginx/html
 
+# Image Nginx a utiliser
+
 FROM nginx:1.27-alpine
 COPY dist /usr/share/nginx/html
